@@ -162,7 +162,13 @@ h3 {
 
 .grid-main {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 300px 1fr;
+  gap: 1rem;
+}
+
+.side-stack {
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
 }
 
@@ -170,6 +176,155 @@ h3 {
   .grid-main {
     grid-template-columns: 1fr;
   }
+}
+
+.board-visual {
+  margin-bottom: 1rem;
+}
+
+.board-visual svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  background: #12181e;
+  border: 1px solid var(--line);
+}
+
+.board-hint {
+  margin: 0.45rem 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.fs-pad {
+  fill: #2a333c;
+  stroke: #6a7886;
+  stroke-width: 2;
+  transition: fill 0.15s ease, stroke 0.15s ease;
+}
+
+.fs-pad.is-selected {
+  fill: #4a3424;
+  stroke: var(--accent);
+  stroke-width: 3;
+  filter: url(#glow);
+}
+
+.fs-pad.is-live {
+  stroke: var(--accent-2);
+  stroke-width: 3;
+}
+
+.fs-pad.is-stomp {
+  fill: #3a3420;
+  stroke: color-mix(in srgb, var(--stomp) 70%, #6a7886);
+}
+
+.fs-pad.is-stomp.is-selected {
+  stroke: var(--stomp);
+}
+
+.nav-pad {
+  fill: #2a333c;
+  stroke: #6a7886;
+  stroke-width: 1.5;
+}
+
+.hotspot:focus {
+  outline: none;
+}
+
+.hotspot:focus .fs-pad,
+.hotspot:focus .nav-pad {
+  stroke: var(--focus);
+}
+
+.fs-num {
+  fill: var(--text);
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.fs-name {
+  fill: var(--muted);
+  font-family: var(--font);
+  font-size: 9px;
+  pointer-events: none;
+}
+
+.label {
+  fill: var(--muted);
+  font-family: var(--font);
+  font-size: 11px;
+}
+
+.display-digits {
+  fill: var(--accent);
+  font-family: var(--mono);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.brand-mark {
+  fill: #c5d0d8;
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.selected-banner {
+  margin: 0 0 0.65rem;
+  padding: 0.55rem 0.65rem;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--accent) 18%, var(--bg));
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line));
+  font-size: 0.85rem;
+}
+
+.activity-list,
+.backup-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  max-height: 220px;
+  overflow: auto;
+}
+
+.activity-list li,
+.backup-list li {
+  display: flex;
+  gap: 0.55rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+}
+
+.activity-list .time {
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.callout {
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--stomp) 12%, var(--bg));
+  border: 1px solid color-mix(in srgb, var(--stomp) 40%, var(--line));
+  margin-bottom: 0.85rem;
+}
+
+.callout p {
+  margin: 0.4rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
 }
 
 .panel {

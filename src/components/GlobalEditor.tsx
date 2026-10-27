@@ -27,11 +27,19 @@ export function GlobalEditor({ global, uno, onChange }: Props) {
 
   return (
     <div className="editor-sections">
-      <p className="hint">
-        En UnO el modo stompbox es <strong>global</strong> (no por banco). Si lo
-        activás, la grilla pasa a 19 bancos × 5 presets + 5 stomps fijos. Direct
-        Select y Stompbox no se pueden usar juntos.
-      </p>
+      <div className="callout">
+        <strong>¿Stompbox por preset o por banco?</strong>
+        <p>
+          No. En firmware <strong>UnO 1.x</strong> el stompbox mode es un switch{' '}
+          <em>global</em> de toda la pedalera: o está ON (5 stomps fijos + 19×5
+          presets) o OFF (10×10 clásico). No se puede mezclar “este banco con
+          stomps / este otro sin”. Eso sí existe en <strong>UnO2 / LG-FCB</strong>,
+          no en UnO clásico.
+        </p>
+        <p>
+          Direct Select y Stompbox son excluyentes en UnO.
+        </p>
+      </div>
 
       <div className="panel" style={{ padding: 0, border: 'none', background: 'transparent' }}>
         <h3>Modo de operación</h3>

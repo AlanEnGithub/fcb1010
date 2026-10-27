@@ -17,9 +17,15 @@ Editor web modular para la pedalera **Behringer FCB1010** con firmware
 
 Detalle del protocolo: [docs/sysex-format.md](docs/sysex-format.md).
 
-> **Nota UnO:** el modo stompbox es *global* en el firmware (no por banco). La UI
-> es modular: al activarlo reorganiza la grilla. Direct Select y Stompbox son
-> excluyentes.
+> **Nota UnO:** el modo stompbox es *global* en el firmware — **no por preset ni
+> por banco**. La UI reorganiza la grilla al activarlo. Direct Select y Stompbox
+> son excluyentes. Layouts por banco = UnO2 / LG-FCB.
+
+## Pedalera visual y backups
+
+- Ilustración clickeable de la FCB1010 (pedales 1–10, UP/DN).
+- MIDI en vivo: al pisar la pedalera, el editor resalta el pedal y selecciona el preset.
+- Pestaña **Backups**: varias instantáneas nombradas en el navegador (restaurar / renombrar / borrar).
 
 ## Cómo correr
 
